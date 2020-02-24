@@ -15,6 +15,9 @@ export class OxfordWordComponent implements OnInit {
 
   ngOnInit(): void {
     this.service.searchWords('example')
-      .subscribe(value => console.log(value));
+      .subscribe(value => {
+        console.log(value.results[0].lexicalEntries[0].entries[0].senses[0].examples[0].text);
+        this.words = value.results;
+      });
   }
 }
