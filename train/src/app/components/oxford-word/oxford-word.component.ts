@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {WordsService} from '../../services/words.service';
 
 @Component({
   selector: 'app-oxford-word',
@@ -9,12 +10,11 @@ export class OxfordWordComponent implements OnInit {
 
   words: any[];
 
-  constructor() {
+  constructor(private service: WordsService) {
   }
 
   ngOnInit(): void {
-    this.words = [{Word: 'willigness', Meaning: 'word', Use: 'Count'},
-      {Word: 'moon', Meaning: 'Luna', Use: 'Count'},
-      {Word: 'sun', Meaning: 'star', Use: 'Non Count'}];
+    this.service.searchWords('example')
+      .subscribe(value => console.log(value));
   }
 }

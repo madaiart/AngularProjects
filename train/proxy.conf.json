@@ -1,0 +1,6 @@
+{
+  "/api": {
+    "target": "https://od-api.oxforddictionaries.com",
+    "secure": false
+  }
+}
