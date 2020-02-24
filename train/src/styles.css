@@ -2,6 +2,10 @@
 /*@import url(https://bootswatch.com/4/lux/bootstrap.min.css);*/
 /*@import url(https://bootswatch.com/4/cyborg/bootstrap.min.css);*/
 /*@import url(https://bootswatch.com/4/darkly/bootstrap.min.css);*/
-@import url(https://bootswatch.com/4/materia/bootstrap.min.css);
+/*@import url(https://bootswatch.com/4/materia/bootstrap.min.css);*/
 /*@import url(https://bootswatch.com/4/minty/bootstrap.min.css);*/
+@import url(https://bootswatch.com/4/flatly/bootstrap.min.css);
 
+.app-clickable {
+  cursor: pointer;
+}
