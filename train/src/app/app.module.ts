@@ -8,19 +8,28 @@ import {HeaderComponent} from './components/header/header.component';
 import {OxfordWordComponent} from './components/oxford-word/oxford-word.component';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import {VariantsComponent} from './components/variants/variants.component';
+import {NgxAudioPlayerModule} from 'ngx-audio-player';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {ServiceWorkerModule} from '@angular/service-worker';
+import {environment} from '../environments/environment';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     HeaderComponent,
-    OxfordWordComponent
+    OxfordWordComponent,
+    VariantsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxAudioPlayerModule,
+    BrowserAnimationsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production})
   ],
   providers: [],
   bootstrap: [AppComponent]

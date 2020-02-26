@@ -1,0 +1,37 @@
+<div *ngIf="!variante" class="text text-warning">
+  <h3>Fetching information...</h3>
+</div>
+<div class="container" *ngIf="variante">
+  <h2>{{variante.word}}</h2>
+  <div class="row">
+    <div class="col-sm-8">
+      <h3>Meaning</h3>
+      <div *ngFor="let m of variante.results">
+        <div *ngFor="let ml of m.lexicalEntries">
+          <div *ngFor="let mle of ml.entries">
+            <div *ngFor="let mles of mle.senses">
+              <div *ngFor="let mlesd of mles.definitions">
+                <b>{{mlesd}}</b>
+              </div>
+              <div *ngFor="let mlesd of mles.examples">
+                <p>{{mlesd|json}}</p>
+              </div>
+            </div>
+          </div>
+          <hr/>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <h3>Sound</h3>
+      <div *ngFor="let m of variante.results">
+        <div *ngFor="let ml of m.lexicalEntries">
+          <div *ngFor="let mlp of ml.pronunciations">
+            <mat-basic-audio-player [audioUrl]="mlp.audioFile" [title]="variante.word" [autoPlay]="false"
+                                    muted="muted"></mat-basic-audio-player>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
